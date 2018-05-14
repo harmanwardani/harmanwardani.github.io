@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="">
 
 <head>
     <meta charset="UTF-8">
-    <title>👻</title>
+    <title> </title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
+    <div class="spinner">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <div class="test">
         <iframe frameborder="0" width="100%" height="100%" src="https://www.dailymotion.com/embed/video/x6jijfi?related=0" allowfullscreen allow="autoplay">
         </iframe>
@@ -23,5 +32,19 @@
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TMGP3b9qC3M?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 </body>
+<script>
+document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+
+document.body.style.overflow = "hidden";
+
+window.onload = function() {
+    var el = document.querySelector('.spinner');
+    el.classList.add('hide');
+    window.setTimeout(function() {
+        el.style.display = "none";
+    }, 500);
+    document.body.style.overflow = "visible";
+}
+</script>
 
 </html>
