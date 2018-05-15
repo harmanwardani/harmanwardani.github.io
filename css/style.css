@@ -48,11 +48,14 @@
     width: 30px;
 
     animation: pulsate 1s ease-out;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
 }
 
 @keyframes pulsate {
     0% {
+        -webkit-transform: scale(.1);
         transform: scale(.1);
         opacity: 0.0;
     }
@@ -60,6 +63,7 @@
         opacity: 1;
     }
     100% {
+        -webkit-transform: scale(1.2);
         transform: scale(1.2);
         opacity: 0;
     }
@@ -67,6 +71,7 @@
 
 @-webkit-keyframes pulsate {
     0% {
+        -webkit-transform: scale(.1);
         transform: scale(.1);
         opacity: 0.0;
     }
@@ -74,6 +79,7 @@
         opacity: 1;
     }
     100% {
+        -webkit-transform: scale(1.2);
         transform: scale(1.2);
         opacity: 0;
     }
