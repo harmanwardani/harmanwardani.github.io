@@ -1,0 +1,73 @@
+/*          initialll         */
+
+.test,
+.spinner {
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.spinner {
+    background: #EDEDED;
+    position: fixed;
+    overflow: hidden;
+    transition: 1.0s;
+    display: table;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.hide {
+    animation: hide 500ms linear;
+    animation-fill-mode: forwards;
+}
+
+.bouncybox {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bouncy {
+    margin: 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: black;
+  -webkit-animation: bouncy .5s infinite ease-in-out;
+          animation: bouncy .5s infinite ease-in-out;
+}
+
+@-webkit-keyframes bouncy {
+  40% {
+    height: 10px;
+  }
+  50% {
+    -webkit-transform: translate(0, 25px);
+            transform: translate(0, 25px);
+  }
+  65% {
+    height: 10px;
+  }
+}
+
+@keyframes bouncy {
+  40% {
+    height: 10px;
+  }
+  50% {
+    -webkit-transform: translate(0, 25px);
+            transform: translate(0, 25px);
+  }
+  65% {
+    height: 10px;
+  }
+}
