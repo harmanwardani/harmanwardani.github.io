@@ -4,7 +4,7 @@
 .spinner {
     background: black;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     min-height: 600px;
     overflow: hidden;
 }
@@ -36,38 +36,31 @@
     vertical-align: middle;
 }
 
-.bouncy {
-    margin: 0 auto;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background: black;
-  -webkit-animation: bouncy .5s infinite ease-in-out;
-          animation: bouncy .5s infinite ease-in-out;
+.signal {
+    border: 5px solid #333;
+    border-radius: 30px;
+    height: 30px;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+
+    animation: pulsate 1s ease-out;
+    animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes bouncy {
-  40% {
-    height: 10px;
-  }
-  50% {
-    -webkit-transform: translate(0, 25px);
-            transform: translate(0, 25px);
-  }
-  65% {
-    height: 10px;
-  }
-}
-
-@keyframes bouncy {
-  40% {
-    height: 10px;
-  }
-  50% {
-    -webkit-transform: translate(0, 25px);
-            transform: translate(0, 25px);
-  }
-  65% {
-    height: 10px;
-  }
+@keyframes pulsate {
+    0% {
+        transform: scale(.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
 }
