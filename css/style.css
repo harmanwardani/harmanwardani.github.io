@@ -690,6 +690,9 @@ div[class^="layer"] {
     .path1, .path2 {
         stroke-width: 3px !important;
     }
+    .path, .avicii .layer1, .clicked.avicii .layer1, .starlight .layer1a {
+    animation: none;
+}
 }
 
 @media screen and (max-width: 991.98px) {
