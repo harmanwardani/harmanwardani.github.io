@@ -691,7 +691,7 @@ div[class^="layer"] {
         stroke-width: 3px !important;
     }
     .path, .avicii .layer1, .clicked.avicii .layer1, .starlight .layer1a {
-    animation: none;
+    animation: none !important;
 }
 }
 
