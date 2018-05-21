@@ -1,73 +1,743 @@
-/*          initialll         */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-.test,
-.spinner {
-    background: black;
+
+/* --------------------------- initial --------------------------- */
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+/* ++ RULES --*/
+
+
+/* ++ Fade in animation should be less than 500ms / .5s */
+
+.madeon {
+    font-family: "madeon";
+}
+
+.brandon {
+    font-family: "brandon";
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.section,
+#popup {
+    background: white;
     height: 100vh;
     width: 100%;
-    min-height: 600px;
+    /*min-height: 600px;*/
     overflow: hidden;
 }
 
-.spinner {
-    background: #EDEDED;
+.bg,
+div[class^="layer"] {
+    height: 100%;
+    width: 100%;
+}
+
+div[class^="layer"] {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
+
+#bg,
+#av {
+    /*transition: .5s linear;*/
+    /*transition-timing-function: linear;*/
+}
+
+.closeyt {
+    font-size: 100px;
+    color: white;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+
+
+
+
+
+
+/* --------------------- floating / fixed infos --------------------- */
+
+.info {
     position: fixed;
-    overflow: hidden;
-    transition: 1.0s;
-    display: table;
+    z-index: 1;
 }
 
-@keyframes hide {
+.logo {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    opacity: 0.9;
+}
+
+.path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    animation: dash 7s linear infinite;
+}
+
+@keyframes dash {
     0% {
+        stroke-dashoffset: 0;
+    }
+    10% {
+        stroke-dashoffset: -100;
+    }
+    20%,
+    100% {
+        stroke-dashoffset: -200;
+    }
+}
+
+.song,
+.page {
+    position: fixed;
+    transition: .5s;
+}
+
+.song,
+.reveal {
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s all;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.judul {
+    padding-left: 20px;
+}
+
+.judul,
+.artist,
+.reveal {
+    font-size: 14px;
+    color: white;
+    letter-spacing: 20px;
+    transition: .25s;
+}
+
+.artist {
+    color: rgb(175, 175, 175);
+    opacity: 0;
+    position: absolute;
+    letter-spacing: .5px;
+    font-size: 14px;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    text-transform: lowercase;
+    transition-duration: .75s;
+}
+
+.artist:before {
+    content: "@";
+    font-size: 12px;
+    padding-right: 1px;
+}
+
+.song:hover .judul {
+    opacity: 0;
+}
+
+.song:hover .reveal,
+.song:hover .artist {
+    opacity: 1;
+    transition-duration: .25s;
+}
+
+.song:hover .artist {
+    transition-delay: .25s;
+    transition-duration: 1s;
+}
+
+.song:hover .judul {
+    transition-delay: .15s;
+}
+
+.reveal {
+    opacity: 0;
+    position: absolute;
+    bottom: -1px;
+    padding-left: 18px;
+    white-space: nowrap;
+    letter-spacing: 18px;
+    font-size: 12px;
+    transition: .85s;
+    transition-property: opacity;
+}
+
+.page {
+    left: 50px;
+    bottom: 50%;
+    transform: translateY(50%);
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 7px;
+}
+
+
+
+
+
+
+
+
+/* --------------------------- seksi 1 --------------------------- */
+
+.avicii .bg {
+    background-color: #DAD9DE;
+    /*transition-delay: .5s;*/
+}
+
+.clicked.avicii {
+    /*overflow: hidden;*/
+}
+
+.clicked.avicii .bg {
+    /*background-color: #F9E7B3;*/
+}
+
+.avicii .layer1 {
+    animation: hues 7s linear infinite;
+}
+
+.clicked.avicii .layer1 {
+    animation: hues 7s linear, scale 1.5s linear forwards;
+}
+
+.clicked.avicii .layer2 {
+    opacity: 0;
+    transform: scale(1.1) !important;
+    transition: .5s;
+    /*transition-delay: .25s;*/
+}
+
+@keyframes scale {
+    0% {}
+    25% {
+        transform: scale(3);
         opacity: 1;
     }
     100% {
-        opacity: 0;
+        transform: scale(3);
+        opacity: 1;
     }
 }
 
-.hide {
-    animation: hide 500ms linear;
-    animation-fill-mode: forwards;
+@keyframes hues {
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(-90deg);
+    }
 }
 
-.bouncybox {
-    display: table-cell;
-    vertical-align: middle;
+
+
+
+/* --------------------------- seksi 2 --------------------------- */
+
+.starlight .layer1a {
+    -webkit-animation: spin 100s linear infinite;
+    -o-animation: spin 100s linear infinite;
+    animation: spin 100s linear infinite;
 }
 
-.bouncy {
-    margin: 0 auto;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background: black;
-  -webkit-animation: bouncy .5s infinite ease-in-out;
-          animation: bouncy .5s infinite ease-in-out;
+@keyframes spin {
+    100% {
+        transform: rotate(360deg)
+    }
 }
 
-@-webkit-keyframes bouncy {
-  40% {
-    height: 10px;
-  }
-  50% {
-    -webkit-transform: translate(0, 25px);
-            transform: translate(0, 25px);
-  }
-  65% {
-    height: 10px;
-  }
+.clicked.starlight .layer3 {
+    animation: zoom1 1.5s ease-in forwards;
 }
 
-@keyframes bouncy {
-  40% {
+@keyframes zoom1 {
+    0% {}
+    100% {
+        transform: scale(2.5);
+        /*opacity: 0;*/
+    }
+}
+
+.clicked.starlight .layer2 {
+    animation: zoom2 1.5s ease-in forwards;
+}
+
+
+@keyframes zoom2 {
+    0% {}
+    100% {
+        transform: scale(1.5);
+        /*opacity: 0;*/
+    }
+}
+
+
+
+
+
+/* --------------------------- seksi 3 --------------------------- */
+
+.sfy .bg {
+    transform: scale(1.35);
+}
+
+.sfy .layer2 {
+    margin-top: -5%;
+}
+
+.sfy .layer1 {
+    filter: blur(2px);
+}
+
+.sfy .layer3 {
+    animation: terang 4s infinite;
+}
+
+@keyframes terang {
+    0%,
+    100% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0.65;
+    }
+}
+
+.clicked.sfy .layer2:after {
+    content: ' ';
+    background: white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    animation: fadewhite 1s forwards;
+}
+
+@keyframes fadewhite {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.clicked.sfy .layer1 {
+    animation: scaled 1s forwards;
+}
+
+@keyframes scaled {
+    to { transform: scale(1.15) }
+}
+
+.clicked.sfy .layer2 {
+    animation: scaled2 1s forwards;
+}
+
+
+@keyframes scaled2 {
+    to { transform: scale(0.95) }
+}
+
+
+
+
+
+
+
+/* --------------------------- seksi 4 --------------------------- */
+
+.fijiwiji .layer2 {
+    animation: updown 4s infinite;
+}
+
+@keyframes updown {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.fijiwiji .layer3 {
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    0%,
+    100% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0.1
+    }
+}
+
+.layer5 {
+    width: 300px !important;
+    height: 30px !important;
+    background: rgba(25,25,25,0.5);
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border-radius: 5px;
+}
+
+.clicked.fijiwiji .layer2 {
+    animation: updown 4s infinite, upp 2s ease-in forwards;
+}
+
+@keyframes upp {
+    to { transform: translate3d(-25%, -100%, 0); }
+}
+
+
+
+
+/* ------------------------------- popup ---------------------------- */
+
+#popup {
+    /*background-color: #F9E7B3;*/
+    min-height: 0;
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 4;
+    background: transparent;
+}
+
+#popup.muncul {
+    display: block;
+    background: black;
+    animation: muncul 1s forwards;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#popup.muncul.fadeout {
+    opacity: 0;
+    animation: outro .25s linear forwards;
+}
+
+@keyframes outro {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+}
+
+.youtube {
+    height: 100%;
+    width: 100%;
+}
+
+.iframejudul {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    cursor: default;
+    transition: .25s;
+    width: 100%;
+}
+
+.iframejudul:hover {
+    opacity: 0;
+}
+
+.artistyt,
+.judulyt,
+.extendyt {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+
+.artistyt,
+.extendyt {
+    position: absolute;
+    font-size: 14px;
+    letter-spacing: 10px;
+    padding: 2.5px 5px 2.5px 15px;
+}
+
+.judulyt {
+    top: 40px;
+    font-size: 45px;
+    letter-spacing: 15px;
+    padding: 15px 0px 15px 15px;
+    position: absolute;
+}
+
+.extendyt {
+    top: 104px;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: white;
+}
+
+.btn-back {
+    position: absolute;
+    top: calc(5%);
+    width: 20px;
+    right: 5%;
+    opacity: 0.75;
+    cursor: pointer;
+    padding: 20px;
+    transition: .25s;
+}
+
+.btn-back .path1 {
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 0%;
+    transition: .5s;
+}
+
+.btn-back:hover {
+    opacity: 1;
+}
+
+.btn-back:hover .path1 {
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 200%;
+}
+
+
+
+
+/* --------------------------- lil cosmetics ---------------------- */
+
+#sf-2,
+#sf-1,
+#av-1,
+#fj-4 {
+    transition: 0.075s linear;
+}
+
+
+
+
+
+
+
+
+/* --------------------------- lil hack --------------------------- */
+
+.fp-tooltip {
+    display: none !important;
+}
+
+#fp-nav {
+    z-index: 3;
+}
+
+#fp-nav.right {
+    right: 50px;
+}
+
+#fp-nav ul li:hover a:not(.active) span {
     height: 10px;
-  }
-  50% {
-    -webkit-transform: translate(0, 25px);
-            transform: translate(0, 25px);
-  }
-  65% {
-    height: 10px;
-  }
+    width: 10px;
+    margin: -5px 0 0 -5px;
+}
+
+#fp-nav ul li a span {
+    background: black;
+    transition: .2s;
+}
+
+.mystyle {
+    animation: lol .2s linear;
+}
+
+@keyframes lol {
+    0% {
+        background: black
+    }
+    100% {
+        background: white
+    }
+}
+
+
+
+
+
+
+
+
+
+/* --------------------------- etc. --------------------------- */
+
+#spinner {
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    z-index: 99;
+    background: rgb(250,250,250);
+}
+
+#spinner.hide {
+    animation: hiding .5s forwards;
+}
+
+@keyframes hiding {
+    to { transform: translateX(100%) }
+}
+
+.wait:after {
+    content: "";
+    animation: loading 1.2s linear infinite;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    padding: 100px;
+    position: absolute;
+        font-family: "madeon";
+        font-size: 45px;
+        text-shadow: -10px -10px 0px rgba(0,0,0,0.15);
+}
+
+.wait:hover:after {
+    font-family: "brandon";
+    font-weight: bold;
+}
+
+@keyframes loading {
+    0% { content: 'l' }
+    15% { content: 'o' }
+    30% { content: 'a' }
+    45% { content: 'd' }
+    60% { content: 'i' }
+    75% { content: 'n' }
+    90% { content: 'g' }
+    100% { content: 'l' }
+}
+
+#wholething {
+    cursor: crosshair;
+}
+
+@media screen and (max-width: 767.98px) {
+    .page {
+        display: none;
+    }
+    .judul.madeon, .song:hover .judul  {
+        letter-spacing: 10px !important;
+        /*text-transform: initial;*/
+    }
+    #fp-nav {
+        display: none;
+    }
+    .artistyt, .judulyt, .extendyt {
+        background: none;
+        color: white;
+        /*font-weight: normal;*/
+        letter-spacing: 0px;
+        padding-left: 3px !important;
+        background: transparent !important;
+    }
+    .judulyt {
+        top: 20px !important;
+        padding-left: 0px !important;
+        text-decoration: underline;
+        text-decoration-color: rgba(255,255,255,0.5);
+        text-decoration-style: dashed;
+    }
+    .extendyt {
+        top: 72.5px !important;
+        opacity: 0.75;
+    }
+    .extendyt:before {
+        content: "\2022  ";
+    }
+
+    .btn-back {
+        top: calc(5% + 20px);
+    }
+    .path1, .path2 {
+        stroke-width: 3px !important;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .judul.madeon, .song:hover .judul {
+        font-family: "brandon";
+        letter-spacing: 18px;
+        font-size: 12px;
+        font-weight: bold;
+        /*text-transform: initial;*/
+    }
+    .path1, .path2 {
+        stroke-width: 3.5px !important;
+    }
+    .judulyt, .artistyt, .extendyt {
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        background: white;
+        padding: 10px 20px;
+        border-radius: 0px;
+    }
+    .artistyt {
+        padding: 0px 20px;
+        font-weight: normal;
+    }
+
+    .judulyt {
+        top:32px;
+    }
+    .extendyt {
+        top: 84px;
+        background: black;
+        padding: 0px 20px;
+        font-weight: normal;
+    }
+}
+
+
+
+
+
+
+
+/* ---------------- dont use -- experimental --------------*/
+
+.noise {
+    background-image: url(data:image/png;base64,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);
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    /*animation: grain 1s linear infinite;*/
 }
