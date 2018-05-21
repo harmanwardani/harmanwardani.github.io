@@ -107,11 +107,6 @@
     <script src="js/main.js"></script>
     <script src="js/javascript.fullPage.min.js"></script>
     <script>
-    window.onload = document.getElementById('spinner').classList.add('hide');
-    setTimeout(function() {
-        document.getElementById('spinner').style.display = "none";
-    }, 500);
-
     // ----- mousemooooov ---------------------------------------------
     (function interact() {
         if (window.matchMedia("(min-width: 767.98px").matches) {
@@ -189,6 +184,12 @@
         css3: true,
         navigation: true,
         navigationPosition: 'right',
+        afterRender: function() {
+            document.getElementById('spinner').classList.add('hide');
+    setTimeout(function() {
+        document.getElementById('spinner').style.display = "none";
+    }, 500);
+        },
         onLeave: function(index, nextIndex, direction) {
             const juduls = ["Heaven", "Starlight", "Song For You", "Yours Truly"];
             const putih = "white";
