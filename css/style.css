@@ -685,7 +685,7 @@ div[class^="layer"] {
     .noise {
         display: none !important;
     }
-    .path, .avicii .layer1, .clicked.avicii .layer1, .starlight .layer1a {
+    .path, .avicii .layer1, .clicked.avicii .layer1, .starlight .layer1a, .sfy .layer3, .fijiwiji .layer2 {
     animation: none !important;
 }
 }
