@@ -107,15 +107,14 @@
     <script src="js/main.js"></script>
     <script src="js/javascript.fullPage.min.js"></script>
     <script>
-        (function loading() {
-            window.onload = document.getElementById('spinner').classList.add('hide');
-            setTimeout(function(){
-                document.getElementById('spinner').style.display = "none";
-            }, 500);
-        })();
+    window.onload = document.getElementById('spinner').classList.add('hide');
+    setTimeout(function() {
+        document.getElementById('spinner').style.display = "none";
+    }, 500);
 
     // ----- mousemooooov ---------------------------------------------
     (function interact() {
+        if (window.matchMedia("(min-width: 767.98px").matches) {
         const bg = document.getElementById('av-1');
         const av = document.getElementById('av-2');
 
@@ -141,7 +140,8 @@
 
             car.style.transform = `translate3d(-${mouseX}%, -${mouseY * 2}%, 0)`;
             mount.style.transform = `translate3d(-${mouseX * 0.5}%, -${mouseY * 0.5}%, 0)`;
-        });
+        })
+        };
     })();
 
     function popup(kelas, urlid, artist, judul, ket) {
