@@ -594,6 +594,9 @@ div[class^="layer"] {
 .wait:after {
     content: "";
     animation: loading 1.2s linear infinite;
+    -webkit-animation: loading 1.2s linear infinite;
+    -o-animation: loading 1.2s linear infinite;
+    -moz-animation: loading 1.2s linear infinite;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
@@ -610,6 +613,39 @@ div[class^="layer"] {
 }
 
 @keyframes loading {
+    0% { content: 'l' }
+    15% { content: 'o' }
+    30% { content: 'a' }
+    45% { content: 'd' }
+    60% { content: 'i' }
+    75% { content: 'n' }
+    90% { content: 'g' }
+    100% { content: 'l' }
+}
+
+@-webkit-keyframes loading {
+    0% { content: 'l' }
+    15% { content: 'o' }
+    30% { content: 'a' }
+    45% { content: 'd' }
+    60% { content: 'i' }
+    75% { content: 'n' }
+    90% { content: 'g' }
+    100% { content: 'l' }
+}
+
+@-moz-keyframes loading {
+    0% { content: 'l' }
+    15% { content: 'o' }
+    30% { content: 'a' }
+    45% { content: 'd' }
+    60% { content: 'i' }
+    75% { content: 'n' }
+    90% { content: 'g' }
+    100% { content: 'l' }
+}
+
+@-o-keyframes loading {
     0% { content: 'l' }
     15% { content: 'o' }
     30% { content: 'a' }
